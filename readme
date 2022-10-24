@@ -1,0 +1,21 @@
+flexDirection:'row'
+functional component
+app component is a root component, any component must be inside app component
+ views equals to div , used to build boxers and containers that hold content.
+    View will hold , inside view, we need to use text 
+    view can have multiple child components
+
+
+
+    FlatList:
+    Input: Data: list
+    renderItem: function which returns Text View  
+    keyExtractor: takes item and index, and returns position of key 
+
+    Pressable:
+    Use Pressable by wrapping around View
+    Input : onPress
+
+    Modal :
+    input : visible  : Boolean 
+    animation 
