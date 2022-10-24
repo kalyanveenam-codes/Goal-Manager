@@ -1,4 +1,4 @@
-import {StyleSheet, TextInput,Button, View, Modal, ShadowPropTypesIOS} from 'react-native';
+import {StyleSheet, TextInput,Button, View, Modal,Image} from 'react-native';
 import {useState} from 'react';
 
 function GoalInput (props){
@@ -18,15 +18,17 @@ function CancelClickHandler(){
 
 return ( 
 <Modal visible={props.isVisible} animationType='slide'>
-<View>
+<View style={styles.goalIput}>
+<Image source={require('../assets/Goal.png')} style={styles.imgSize} />
 <TextInput placeholder="Enter your goals for the Day"
 style={styles.view1Text}
 onChangeText={getGoalInputHandler}
 value={getInputText}
 />
-
+<View style={styles.btn}>
 <Button title="GO" onPress={GoClickHandler}></Button>
 <Button title="CANCEL" onPress={CancelClickHandler}></Button>
+</View>
 </View>
 </Modal>
 )
@@ -37,5 +39,17 @@ const styles=StyleSheet.create({
         width: "90%",
         borderWidth: 2,
         padding: 10,
-      }
+      },
+    goalIput:{
+paddingTop:80,
+alignItems:'center'
+    },
+    imgSize:{
+    width: 400,
+    height : 350
+    },
+    btn:{
+flexDirection:'row',
+color:'black'
+    }
 })

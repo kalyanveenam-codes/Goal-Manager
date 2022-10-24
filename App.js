@@ -3,10 +3,7 @@ import { Component, useState } from "react";
 import {
   Button,
   FlatList,
-  ScrollView,
   StyleSheet,
-  Text,
-  TextInput,
   View,
 } from "react-native";
 import GoalItem from "./components/GoalIItem";
@@ -21,6 +18,7 @@ export default function App() {
       ...curentGoals,
       { text: enteredText, key: Math.random().toString() },
     ]);
+    setModalVisibility(false)
   }
   function CancelClickHandler() {
     setModalVisibility(false)  
