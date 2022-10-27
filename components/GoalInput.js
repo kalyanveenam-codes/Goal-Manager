@@ -10,6 +10,7 @@ function getGoalInputHandler(enteredText) {
 function GoClickHandler(){
     props.onAddGoal(getInputText);
     getInputValue('');
+props.setDefImage(false);
 }
 function CancelClickHandler(){
     props.onCancelGoal();
@@ -17,7 +18,8 @@ function CancelClickHandler(){
 }
 
 return ( 
-<Modal visible={props.isVisible} animationType='slide'>
+<View style={styles.mod}>
+<Modal visible={props.isVisible} animationType='fade' style={styles.modal}>
 <View style={styles.goalIput}>
 <Image source={require('../assets/Goal.png')} style={styles.imgSize} />
 <TextInput placeholder="Enter your goals for the Day"
@@ -31,6 +33,7 @@ value={getInputText}
 </View>
 </View>
 </Modal>
+</View>
 )
 }
 export default GoalInput;
@@ -41,15 +44,21 @@ const styles=StyleSheet.create({
         padding: 10,
       },
     goalIput:{
-paddingTop:80,
-alignItems:'center'
+paddingTop:100,
+alignItems:'center',
+backgroundColor: '#EBDDDD'
+    
     },
     imgSize:{
+
     width: 400,
-    height : 350
+    height : 500
     },
     btn:{
 flexDirection:'row',
 color:'black'
+    },
+    mod:{
+        backgroundColor:'black'
     }
 })
